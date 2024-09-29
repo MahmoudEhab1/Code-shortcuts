@@ -1,0 +1,48 @@
+ access root user
+ sudo su -
+
+ back to normal user
+ ctrl + D
+
+ give user root on a service access ## if you don't want to write sudo every command
+Create the docker group.
+ sudo groupadd docker
+Add your user to the docker group
+ sudo usermod -aG docker $USER
+You can also run the following command to activate the changes to groups:
+ newgrp docker
+ 
+ List all directories even hidden
+ ls -la
+
+ List directory
+ ls
+
+ change directory
+ cd
+
+ back 1 or 2 directories
+ cd .. or cd ../..
+
+ Create directory
+ mkdir <name>
+now run docker without sudo
+ ex: docker -v
+
+read or show file 
+cat <filename>
+
+Create python virtual environment
+python3 -m venv ~/.hello
+
+activate virtual environment
+source ~/.hello/bin/activate
+
+deactivate virtual environment
+deactivate
+
+show path of source code
+pwd
+
+to open and edit file
+vim <filename>

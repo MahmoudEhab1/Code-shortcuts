@@ -1,0 +1,39 @@
+ access root user
+ sudo su -
+
+ back to normal user
+ ctrl + D
+
+ give user root on a service access ## if you don't want to write sudo every command
+Create the docker group.
+ sudo groupadd docker
+Add your user to the docker group
+ sudo usermod -aG docker $USER
+You can also run the following command to activate the changes to groups:
+ newgrp docker
+ 
+ List directory
+ ls
+
+ change directory
+ cd
+
+ back 1 or 2 directories
+ cd .. or cd ../..
+
+ Create directory
+ mkdir <name>
+now run docker without sudo
+ ex: docker -v
+
+read or show file 
+cat <filename>
+
+How To Clone Specific Subdirectory/Branch with Git
+~$ git clone --depth 1 --no-checkout INSERT_REPO_REMOTE_URL
+        //root folder of the same name is created
+~$ cd INSERT_ROOT_FOLDER_NAME/
+~$ git sparse-checkout set INSERT_DESIRED_SUBDIRECTORY_RELATIVE-PATH
+        /* the relative path is the path relative to the current -
+          - working directory, which should be the cloned root folder above */
+~$ git checkout

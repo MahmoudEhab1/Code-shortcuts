@@ -1,0 +1,50 @@
+start docker on linux if not active
+systemctl start docker
+
+search for image
+docker search <image-name>
+
+how to search a docker image in hub.docker.com
+docker search httpd
+
+Download a docker image from hub.docker.com
+docker image pull <image_name>:<image_version/tag>
+
+Show all docker images on your local system
+docker images
+
+Build docker image from Dockerfile
+docker build -t <image_name> . #the dot in the end specify the current directory where the Dockerfile is located 
+
+Create a docker container from image
+docker run --name <container_Name> <image_name>:<image_version/tag>
+docker - run your container in back ground (detached)
+docker run -d --name <container_Name> <image_name>:<image_version/tag>
+
+Expose your application to host server
+docker run -d --name <container_Name> -p <host_port>:<container_port> <image_name>:<Image_version/tag>
+docker run -d --name httpd_container -p 8080:80 httpd:latest
+
+Show all running containers
+docker ps
+
+Show all docker container (running, stpooed, terminated, etc...)
+docker ps -a
+
+Get inside a container
+docker exec -it <container_Name> bash
+
+Stop a container
+docker stop <container_id>
+
+Start a container which is stopped
+docker start <container_id>
+
+Remove a container
+docker rm <container_id>
+
+Remove docker image
+docker rmi <image_id>
+
+run docker compose
+docker-compose up
